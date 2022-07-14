@@ -1,7 +1,7 @@
-{% extends "base.twig" %}
+{% extends "base.twig.html" %}
 {% block main %}
     <section class="gestion-utilisateur">
-        <form class="connexion">
+        <form class="connexion" method="post" action="utilisateur/connexion">
             <legend>Ouvrir une connexion</legend>
             <div class="champs">
                 <label for="uti_courriel">Courriel</label>
