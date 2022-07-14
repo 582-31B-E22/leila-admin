@@ -36,7 +36,7 @@ class UtilisateurControleur extends Controleur
             Utilitaire::nouvelleRoute('categorie/tout');
         }
         else {
-
+            
         }
     }
 }
