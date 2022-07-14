@@ -15,6 +15,7 @@ class HtmlGabarit
         $this->action = $action;
 
         $this->twig = new Environment(new FilesystemLoader(['vues/']), []);
+        $this->twig->addGlobal('session', $_SESSION);
     }
 
     public function affecter($nom, $valeur)

@@ -13,5 +13,9 @@
             </div>
             <input class="btn btn-connexion" type="submit" value="Connexion">
         </form>
+        {% if erreur != '' %}
+            <div class="msg-erreur">{{erreur}}</div>
+        {% endif %}
+        
     </section>
 {% endblock %}

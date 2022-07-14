@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 // Pilote de l'application (ou site Web)
 
 // Autochargement des classes des librairies externes
@@ -33,6 +35,9 @@ class Routeur
       }
       else if(file_exists("gabarits/$nomFichier")) {
         include("gabarits/$nomFichier");
+      }
+      else if(file_exists("lib/$nomFichier")) {
+        include("lib/$nomFichier");
       }
     });
   }

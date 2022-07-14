@@ -31,12 +31,20 @@ class UtilisateurControleur extends Controleur
 
         if(!$erreur) {
             // Sauvegarder l'état de connexion
-
+            $_SESSION['utilisateur'] = $utilisateur;
             // Rediriger vers categorie/tout
             Utilitaire::nouvelleRoute('categorie/tout');
         }
         else {
-            
+            $this->gabarit->affecter('erreur', $erreur);
+            $this->gabarit->affecterActionParDefaut('index');
+            $this->index([]);
         }
+    }
+
+    public function deconnexion()
+    {
+        unset($_SESSION['utilisateur']);
+        Utilitaire::nouvelleRoute('utilisateur');
     }
 }

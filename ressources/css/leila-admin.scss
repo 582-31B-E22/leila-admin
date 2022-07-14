@@ -27,10 +27,14 @@ body {
   header {
     margin: 0;
     
-    h2{
+    div.barre-haut {
       background-color: $mono-sombre;
       color: $mono-blanc;
       padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
     }
     
     nav {
@@ -102,6 +106,14 @@ body {
       .btn {
         margin: 1rem auto;
       }
+    }
+
+    .msg-erreur {
+      background-color: $mono-tres-claire;
+      width: 40%;
+      margin: 0 auto 1rem auto;
+      padding: 0.5rem;
+      box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);
     }
   }
 

@@ -16,10 +16,13 @@ body h1, body h2, body h3, body h4, body h5, body h6 {
 body header {
   margin: 0;
 }
-body header h2 {
+body header div.barre-haut {
   background-color: #333;
   color: white;
   padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 body header nav {
   background-color: #aaa;
@@ -77,6 +80,13 @@ body section.gestion-utilisateur form div.champs input {
 }
 body section.gestion-utilisateur form .btn {
   margin: 1rem auto;
+}
+body section.gestion-utilisateur .msg-erreur {
+  background-color: #eee;
+  width: 40%;
+  margin: 0 auto 1rem auto;
+  padding: 0.5rem;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);
 }
 body section.liste-enregistrements {
   display: table;

@@ -1,6 +1,14 @@
 <?php
 class CategorieControleur extends Controleur
 {
+    public function __construct($modele, $module, $action)
+    {
+        parent::__construct($modele, $module, $action);
+        if(!isset($_SESSION['utilisateur'])) {
+            Utilitaire::nouvelleRoute('utilisateur/index');
+        }
+    }
+
     /**
      * Méthode invoquée par défaut si aucune action n'est indiquée
      */

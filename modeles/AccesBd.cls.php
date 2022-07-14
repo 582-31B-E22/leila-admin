@@ -55,7 +55,7 @@ class AccesBd
      * 
      * @return object Objet représentant l'enregistrement retourné
      */
-    protected function lireUn(string $req, array $params=[]) : object
+    protected function lireUn(string $req, array $params=[]) : object | bool
     {
         $this->soumettre($req, $params);
         return $this->rp->fetch();
