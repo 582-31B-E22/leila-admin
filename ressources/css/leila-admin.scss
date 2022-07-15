@@ -7,11 +7,36 @@ $bouton-danger: #900;
 $bouton-attention: rgb(225, 146, 0);
 $table-accent: #005c4a;
 
+// Animation de sortie des messsages d'erreur de gestion des utilisateurs.
+@keyframes animer-sortie-message {
+  from {
+    transform: skew(0) translateX(0);
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    transform: skew(-30deg) translateX(-5%);
+    opacity: 1;
+    animation-timing-function: ease-in-out;
+  }
+  40% {
+    transform: skew(0) translateX(0%);
+    opacity: 1;
+    animation-timing-function: ease-in-out;
+  }
+  to {
+    transform: skew(30deg) translateX(100%);
+    opacity: 0;
+    animation-timing-function: ease-in;
+  }
+}
+
 body {
   box-sizing: content-box;
   margin: 0;
   padding: 0;
   font-family: 'Roboto Slab', sans-serif;
+  overflow-x: hidden;
 
   a, a:active, a:link, a:visited {
     color: inherit;
