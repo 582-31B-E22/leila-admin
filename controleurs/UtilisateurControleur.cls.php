@@ -1,13 +1,21 @@
 <?php
 class UtilisateurControleur extends Controleur
 {
+
+    function __construct($modele, $module, $action)
+    {
+        parent::__construct($modele, $module, $action);
+        if(isset($_SESSION['utilisateur'])) {
+            Utilitaire::nouvelleRoute('categorie/tout');
+        }
+    }
+
     /**
      * Méthode invoquée par défaut si aucune action n'est indiquée
      */
     public function index($params)
     {
-        //$this->gabarit->affecterActionParDefaut('tout');
-        //$this->tout($params);
+        // Aucun code ici pour le moment....
 
     }
 

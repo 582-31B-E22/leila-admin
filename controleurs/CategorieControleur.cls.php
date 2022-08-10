@@ -21,6 +21,12 @@ class CategorieControleur extends Controleur
 
     public function tout($params)
     {
-        # code...
+        $this->gabarit->affecter('categories', $this->modele->tout());
     }
+
+    public function ajouter($categorie) {
+
+    }
+
+
 }
