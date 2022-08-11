@@ -24,9 +24,20 @@ class CategorieControleur extends Controleur
         $this->gabarit->affecter('categories', $this->modele->tout());
     }
 
-    public function ajouter($categorie) {
-
+    public function ajouter() {
+        // Ajouter la nouvelle catégorie (dont les valeurs sont reçues par POST) dans la BD
+        $this->modele->ajouter($_POST);
+        // Rediriger vers l'affichage des catégories
+        Utilitaire::nouvelleRoute('categorie/tout');
     }
 
+    public function retirer() {
+        $this->modele->retirer($_POST['cat_id']);
+        Utilitaire::nouvelleRoute('categorie/tout');
+    }
 
+    public function changer() {
+        $this->modele->changer($_POST);
+        Utilitaire::nouvelleRoute('categorie/tout');
+    }
 }
