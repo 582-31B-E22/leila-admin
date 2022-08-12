@@ -1,0 +1,59 @@
+{% extends "base.twig.html" %}
+
+{% block main %}
+    <section class="liste-enregistrements">
+        <h2><code>Plats</code></h2>
+        <header>
+            <span>id</span>
+            <span>nom</span>
+            <span>détail</span>
+            <span>portion</span>
+            <span>prix</span>
+            <span>catégorie</span>
+            <span class="action"></span>
+        </header>
+        <div class="data">
+            <form class="nouveau" method="post" action="plat/ajouter">
+                <span></span>
+                <span><input type="text" name="pla_nom" value=""></span>
+                <span><input type="text" name="pla_detail" value=""></span>
+                <span><input type="text" name="pla_portion" value=""></span>
+                <span><input type="text" name="pla_prix" value=""></span>
+                <span>
+                    <select name="pla_cat_id_ce">
+                        <option value="">Choisir</option>
+                        {% for categorie in categories %}
+                            <option value="{{categorie.cat_id}}">{{categorie.cat_nom}}</option>    
+                        {% endfor %}
+                    </select>
+                </span>
+                <span class="action">
+                    <button class="btn btn-ajouter btn-plein">ajouter</button>
+                </span>
+            </form>
+
+            {% for plat in plats %}
+            <form method="post">
+                <span><input readonly type="text" name="pla_id" value="{{plat.pla_id}}"></span>
+                <span><input type="text" name="pla_nom" value="{{plat.pla_nom}}"></span>
+                <span><input type="text" name="pla_detail" value="{{plat.pla_detail}}"></span>
+                <span><input type="text" name="pla_portion" value="{{plat.pla_portion}}"></span>
+                <span><input type="text" name="pla_prix" value="{{plat.pla_prix}}"></span>
+                <span>
+                    <select name="pla_cat_id_ce">
+                        {# <option {{ (categorie.cat_type == 'plat') ? 'selected' : '' }} value="plat">Plat</option>
+                        <option {{ (categorie.cat_type == 'vin') ? 'selected' : '' }} value="vin">Vin</option> #}
+                        {% for categorie in categories %}
+                            <option {{plat.pla_cat_id_ce == categorie.cat_id ? ' selected ' : ''}} value="{{categorie.cat_id}}">{{categorie.cat_nom}}</option>    
+                        {% endfor %}
+                    </select>
+                </span>
+                <span class="action">
+                    <button formaction="plat/changer" class="btn btn-modifier">modifier</button>
+                    <button formaction="plat/retirer" class="btn btn-supprimer">supprimer</button>
+                </span>
+            </form>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
