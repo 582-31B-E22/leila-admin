@@ -12,14 +12,14 @@ class PlatControleur extends Controleur
     /**
      * Méthode invoquée par défaut si aucune action n'est indiquée
      */
-    public function index($params)
+    public function index()
     {
         $this->gabarit->affecterActionParDefaut('tout');
-        $this->tout($params);
+        $this->tout();
 
     }
 
-    public function tout($params)
+    public function tout()
     {
         $this->gabarit->affecter('plats', $this->modele->tout());
         // Nous avons aussi besoin des catégories...

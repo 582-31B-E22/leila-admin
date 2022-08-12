@@ -13,10 +13,22 @@ class UtilisateurControleur extends Controleur
     /**
      * Méthode invoquée par défaut si aucune action n'est indiquée
      */
-    public function index($params)
+    public function index()
     {
         // Aucun code ici pour le moment....
 
+    }
+
+    public function nouveau()
+    {
+        // Aucun code ici pour le moment....
+
+    }
+
+    public function ajouter()
+    {
+        $this->modele->ajouter($_POST);
+        Utilitaire::nouvelleRoute('utilisateur/index');
     }
 
     public function connexion()
@@ -55,4 +67,6 @@ class UtilisateurControleur extends Controleur
         unset($_SESSION['utilisateur']);
         Utilitaire::nouvelleRoute('utilisateur');
     }
+
+
 }
